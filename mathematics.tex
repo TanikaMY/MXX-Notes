@@ -1,0 +1,554 @@
+\documentclass{report}
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\renewcommand{\vmatrix}[2]{\begin{bmatrix}#1\\#2\end{bmatrix}}
+\newcommand{\vtilde}[1]{\underset{\sim}{#1}}
+\newcommand{\vtildeset}[2]{#1\vtilde{i}+#2\vtilde{j}}
+\newcommand{\vtildesetb}[3]{#1\vtilde{i}+#2\vtilde{j}+#3\vtilde{k}}
+\newcommand{\re}[1]{\mathfrak{Re}(#1)}
+\newcommand{\im}[1]{\mathfrak{Im}(#1)}
+\newcommand{\conjugate}[1]{\overline{#1}}
+\newcommand{\abs}[1]{\mathopen|#1\mathclose|}
+\newcommand{\sgn}[1]{sgn(#1)}
+\newcommand{\uexists}{\exists !}
+\newcommand{\discoursedomain}{\mathbb{D}}
+\newcommand{\definition}{:=}
+\newcommand{\realnumbers}{\mathfrak{R}}
+\newcommand{\where}{\quad where \quad}
+\renewcommand{\arg}[1]{arg(#1)}
+\renewcommand{\sin}[1]{sin(#1)}
+\renewcommand{\cos}[1]{cos(#1)}
+\renewcommand{\tan}[1]{tan(#1)}
+\renewcommand{\arcsin}[1]{f(x)=sin^{-1}(#1)}
+\renewcommand{\arccos}[1]{f(x)=cos^{-1}(#1)}
+\renewcommand{\arctan}[1]{f(x)=tan^{-1}(#1)}
+\renewcommand{\csc}[1]{csc(#1)}
+\renewcommand{\sec}[1]{sec(#1)}
+\renewcommand{\cot}[1]{cot(#1)}
+\newcommand{\arccsc}[1]{f(x)=csc^{-1}(#1)}
+\newcommand{\arcsec}[1]{f(x)=sec^{-1}(#1)}
+\newcommand{\arccot}[1]{f(x)=cot^{-1}(#1)}
+\newcommand{\veebar}{\underbar{$\vee$}}
+%TODO
+%add z=... for all single-equation examples
+\title{2025 HSC Mathematics Extension 1 / Extension 2}
+\author{Tanika Mellifont-Young}
+\begin{document}
+    \maketitle
+    \newpage
+    \chapter{Vectors}
+        \paragraph{Vectors}
+            have both magnitude and direction. A vector from point $A$ to point $B$ is written $\vec{AB}$.
+        \section{Magnitude}
+            \begin{itemize}
+                \item $\abs{\vtildeset{x}{y}}=\sqrt{x^2+y^2}$
+            \end{itemize}
+        \section{Scalar Multiplication}
+        \begin{itemize}
+            \item $\vtildeset{x}{y}=\sqrt{x^2+y^2}$
+        \end{itemize}
+    \chapter{Complex Numbers}
+        \section{The Imaginary Number}
+            \paragraph{}
+                $i=\sqrt{-1}=\vmatrix{0}{1}$, perpendicular to the real number line $\lambda\vmatrix{1}{0}$. $\forall x\in\realnumbers:\sqrt{-x}=i\sqrt{x}$. $\vmatrix{x}{y}=x+yi,z=\vmatrix{\re{z}}{\im{z}}$.
+            \subsection{Examples}
+                \subsubsection{Express $z=\sqrt{-9}$ in terms of $i$.}
+                    \begin{enumerate}
+                        \item $z=\sqrt{-9}$
+                        \item $z=\sqrt{9}\sqrt{-1}$
+                        \item $z=3i$
+                    \end{enumerate}
+                \subsubsection{Simplify $z=i^3$.}
+                    \begin{enumerate}
+                        \item $z=i^3$
+                        \item $z=i^2i$
+                        \item $z=-i$
+                    \end{enumerate}
+                \subsubsection{Solve $x^2+1=0$ for $x$.}
+                    \begin{enumerate}
+                        \item $x^2+1=0$
+                        \item $x^2=-1$
+                        \item $x=\pm\sqrt{-1}$
+                        \item $x=\pm i$
+                    \end{enumerate}
+        \section{Complex Conjugate}
+            \paragraph{}
+                $\conjugate{z}=\re{z}-\im{z}$. A vector and its conjugate form a conjugate pair. $z+\conjugate{z}\in\realnumbers,z\conjugate{z}\in\realnumbers$.
+            \subsection{Examples}
+                \subsubsection{State the complex conjugate of $z=\frac{-1+i\sqrt{3}}{2}$}
+                    \begin{enumerate}
+                        \item $z=\frac{-1+i\sqrt{3}}{2}$
+                        \item $\conjugate{z}=\frac{-1-i\sqrt{3}}{2}$
+                    \end{enumerate}
+                \subsubsection{State the complex conjugate of $z=\frac{2x-5i-ix+3y}{x^2+y^2}$}
+                    \begin{enumerate}
+                        \item $z=\frac{2x-5i-ix+3y}{x^2+y^2}$
+                        \item $z=\frac{2x-i(5+x)+3y}{x^2+y^2}$
+                        \item $\conjugate{z}=\frac{2x+i(5+x)+3y}{x^2+y^2}$
+                    \end{enumerate}
+                \subsubsection{Prove $z\conjugate{z}\in\realnumbers \where z=a+ib\wedge a,b\in\realnumbers$}
+                    \begin{enumerate}
+                        \item $z\conjugate{z}=(a+ib)(a-ib) \where a,b\in\realnumbers$
+                        \item $z\conjugate{z}=a^2+abi-abi-i^2b^2$
+                        \item $z\conjugate{z}=a^2+b^2$
+                    \end{enumerate}
+        \section{Realising the denominator}
+            \paragraph{}
+                To realise the denominator of a complex number $\frac{1}{z}$, multiply it by $\frac{\conjugate{z}}{\conjugate{z}}$.
+            \subsection{Examples}
+                \subsubsection{Simplify $z=\frac{1}{1+i}$}
+                    \begin{enumerate}
+                        \item $z=\frac{1}{1+i}$
+                        \item $z=\frac{1}{1+i}\frac{1-i}{1-i}$
+                        \item $z=\frac{1(1-i)}{(1+i)(1-i)}$
+                        \item $z=\frac{1-i}{1+i-i-i^2}$
+                        \item $z=\frac{1-i}{2}$
+                        \item $z=\frac{1}{2}-i\frac{1}{2}$
+                    \end{enumerate}
+                \subsubsection{Simplify $z=\frac{2+2i\sqrt{3}}{\sqrt{3}-i}$}
+                    \begin{enumerate}
+                        \item $z=\frac{2+2i\sqrt{3}}{\sqrt{3}-i}$
+                        \item $z=\frac{2+2i\sqrt{3}}{\sqrt{3}-i}\frac{\sqrt{3}+i}{\sqrt{3}+i}$
+                        \item $z=\frac{(2+2i\sqrt{3})(\sqrt{3}+i)}{(\sqrt{3}-i)(\sqrt{3}+i)}$
+                        \item $z=\frac{2\sqrt{3}+2i3+2i+2i^2\sqrt{3}}{4}$
+                        \item $z=\frac{2\sqrt{3}+8i-2\sqrt{3}}{4}$
+                        \item $z=\frac{8i}{4}$
+                        \item $z=2i$
+                    \end{enumerate}
+                \subsubsection{Simplify $z=\frac{1}{\sqrt{2}+i\sqrt{2}}+\frac{1}{1-i}$}
+                    \begin{enumerate}
+                        \item $z=\frac{1}{\sqrt{2}+i\sqrt{2}}+\frac{1}{1-i}$
+                        \item $z=\frac{1}{\sqrt{2}+i\sqrt{2}}\frac{\sqrt{2}-i\sqrt{2}}{\sqrt{2}-i\sqrt{2}}+\frac{1}{1-i}\frac{1+i}{1+i}$
+                        \item $z=\frac{\sqrt{2}-i\sqrt{2}}{4}+\frac{1+i}{2}$
+                        \item $z=\frac{\sqrt{2}-i\sqrt{2}+2+2i}{4}$
+                        \item $z=\frac{\sqrt{2}+2}{4}+i\frac{2-\sqrt{2}}{4}$
+                    \end{enumerate}
+        \section{Addition}
+            \begin{itemize}
+                \item $p+q=\re{p}+\re{q}+i(\im{p}+\im{q})$
+            \end{itemize}
+            \subsection{Examples}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+        \section{Multiplication}
+            \begin{itemize}
+                \item $pq=\re{p}\re{q}+i(\re{p}\im{q}+\re{q}\re{p})-\im{p}\im{q}$
+                \item $pq=p\re{q}+ip\im{q}\where p\in\realnumbers$
+                \item $pq=\abs{p}\abs{q}(\cos{p_\theta+q_\theta}+i\sin{p_\theta+q_\theta})$
+            \end{itemize}
+            \subsection{Examples}
+                \subsubsection{Simplify $z=(3-4i)(7+3i)$}
+                    \begin{enumerate}
+                        \item $z=(3-4i)(7+3i)$
+                        \item $z=3\times7-4i7+3i3-4i3i$
+                        \item $z=21+12-28i+9i$
+                        \item $z=33-19i$
+                    \end{enumerate}
+                \subsubsection{Simplify $z=18(4-5i)$}
+                    \begin{enumerate}
+                        \item $z=18(4-5i)$
+                        \item $z=72-90i$
+                    \end{enumerate}
+                \subsubsection{Simplify $z=2(\cos{\frac{\pi}{5}}+i\sin{\frac{\pi}{5}})5(\cos{\frac{\pi}{7}}+i\sin{\frac{\pi}{7}})$}
+                    \begin{enumerate}
+                        \item $z=2(\cos{\frac{\pi}{5}}+i\sin{\frac{\pi}{5}})5(\cos{\frac{\pi}{7}}+i\sin{\frac{\pi}{7}})$
+                        \item $z=10(\cos{\frac{\pi}{5}+\frac{\pi}{7}}+i\sin{\frac{\pi}{5}+\frac{\pi}{7}})$
+                        \item $z=10(\cos{\frac{7\pi+5\pi}{35}}+i\sin{\frac{7\pi+5\pi}{35}})$
+                        \item $z=10(\cos{\frac{12\pi}{35}}+i\sin{\frac{12\pi}{35}})$
+                    \end{enumerate}
+        \section{Modulus}
+            \begin{itemize}
+                \item $\abs{z}=\sqrt{\re{z}^{2}+\im{z}^{2}}$
+            \end{itemize}
+            \subsection{Examples}
+                \subsubsection{Simplify $z=\abs{2-i\sqrt{3}}$}
+                    \begin{enumerate}
+                        \item $z=\abs{2-i\sqrt{3}}$
+                        \item $z=\sqrt{(2)^2+(-\sqrt{3})^2}$
+                        \item $z=\sqrt{4+\sqrt{9}}$
+                        \item $z=\sqrt{7}$
+                        \item $z=7$
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+        \section{Argument}
+            \begin{itemize}
+                \item $\arg{z}=\arctan{\frac{\im{z}}{\re{z}}}$
+            \end{itemize}
+            \subsection{Examples}
+                \subsubsection{Simplify $z=\arg{1-i\sqrt{3}}$}
+                    \begin{enumerate}
+                        \item $z=\arg{1-i\sqrt{3}}$
+                        \item $z=\arctan{\frac{-\sqrt{3}}{1}}$
+                        \item $z=\arctan{-\sqrt{3}}$
+                        \item $z=-\frac{\pi}{3}$
+                    \end{enumerate}
+        \section{Square Root}
+            \begin{itemize}
+                \item $\sqrt{z}=\pm(\sqrt{\frac{\abs{z}+\re{z}}{2}}+i\sgn{\im{z}}\sqrt{\frac{\abs{z}-\re{z}}{2}})=\frac{b}{2d}\pm i\sqrt{\frac{b^2}{4d^2}}$
+            \end{itemize}
+            \subsection{Examples}
+                \subsubsection{Simplify $\sqrt{5+12i}=a+ib$}
+                    \begin{enumerate}
+                        \item $\sqrt{5+12i}=a+ib$
+                        \item $5+12i=(a+ib)^2$
+                        \item $5+12i=a^2-b^2+i2ab$
+                        \item $5=a^2-b^2$
+                        \item $12=2ab$
+                        \item $ab=6$
+                        \item $(a=2,b=3)\vee(a=-2,b=-3)$ // From inspection.
+                    \end{enumerate}
+                \subsubsection{Simplify $\sqrt{4i-3}=a+ib\where a,b\in\realnumbers$}
+                    \begin{enumerate}
+                        \item $\sqrt{4i-3}=a+ib$
+                        \item $4i-3=(a+ib)^2$
+                        \item $4i-3=a^2-b^2+i2ab$
+                        \item $a^2-b^2=-3$
+                        \item $2ab=4$
+                        \item $ab=2$
+                        \item $a=\frac{2}{b}$
+                        \item $\frac{4}{b^2}-b^2=-3$
+                        \item $-b^2+3+4b^{-2}=0$
+                        \item $b^4-3b^2-4=0$
+                        \item $(b^2-4)(b^2+1)=0$
+                        \item $b^2=4,-1$
+                        \item $b=\pm2$
+                        \item $a=\frac{2}{\pm2}$
+                        \item $a=\pm1$
+                        \item $\sqrt{4i-3}=1+2i$
+                    \end{enumerate}
+                \subsubsection{Solve $iz^2-z+2i=0$ for $z$}
+                    \begin{enumerate}
+                        \item $iz^2-z+2i=0$
+                    \end{enumerate}
+        \section{Conversion to Vector or Cartesian form}
+            \begin{itemize}
+                \item $z=\vmatrix{\re{z}}{\im{z}}$
+            \end{itemize}
+            \subsection{Examples}
+                \subsubsection{Express $z=a+ib$ in vector form.}
+                    \begin{enumerate}
+                        \item $z=a+ib=\vmatrix{a}{b}$
+                    \end{enumerate}
+        \section{Conversion to Modulus-Argument Form}
+            \begin{itemize}
+                \item $z=\abs{z}, \arg{z}$
+            \end{itemize}
+        \section{Conversion to Polar Form}
+            \begin{itemize}
+                \item $r=\abs{z}$
+                \item $\theta=\arctan{\frac{\im{z}}{\re{z}}}$
+                \item $z=r(\cos{\theta}+i\sin{\theta})$
+            \end{itemize}
+            \subsection{Examples}
+                \subsubsection{Express $z=-\sqrt{2}+i\sqrt{2}$ in polar form.}
+                    \begin{enumerate}
+                        \item $z=-\sqrt{2}+i\sqrt{2}$
+                        \item $\abs{z}=\sqrt{(-\sqrt{2})^2+(\sqrt{2})^2}$
+                        \item $\abs{z}=\sqrt{2+2}$
+                        \item $\abs{z}=2$
+                        \item $\arg{z}=\arctan{}$
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+        \section{Polar Quotient}
+            \begin{itemize}
+                \item $\frac{p}{q}=\frac{|p|}{|q|}(\cos{p_\theta-q_\theta}+i\sin{p_\theta-q_\theta})$
+            \end{itemize}
+            \subsection{Examples}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+        \section{Polar Exponentiation}
+            \begin{itemize}
+                \item $z^n=r^n(\cos{n\theta}+i\sin{n\theta})$
+            \end{itemize}
+            \subsection{Examples}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+        \section{Polar Reciprocal}
+            \begin{itemize}
+                \item $z^{-1}=\frac{\cos{\theta}-i\sin{\theta}}{r}$
+            \end{itemize}
+            \subsection{Examples}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+        \section{Polar Unit Vector Reciprocal}
+            \begin{itemize}
+                \item $\abs{z}=1\implies z^{-1}=\conjugate{z}$
+            \end{itemize}
+            \subsection{Examples}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+        \section{Product of Conjugate pairs}
+            \begin{itemize}
+                \item $z\conjugate{z}=\abs{z}^{2}$
+            \end{itemize}
+            \subsection{Examples}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+        \section{Sum of Conjugate pairs}
+            \begin{itemize}
+                \item $z+\conjugate{z}=2\re{z}$
+            \end{itemize}
+            \subsection{Examples}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+        \section{Difference of Conjugate pairs}
+            \begin{itemize}
+                \item $z-\conjugate{z}=2i\im{z}$
+            \end{itemize}
+            \subsection{Examples}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+        \section{Conjugate Argument}
+            \begin{itemize}
+                \item $\conjugate{z}=\arg{\conjugate{z}}=-\arg{z}$
+            \end{itemize}
+            \subsection{Examples}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+        \section{Associativity of Conjugate Pairs}
+            \begin{itemize}
+                \item $\conjugate{p}+\conjugate{q}=\conjugate{p+q}$
+                \item $\conjugate{p}\conjugate{q}=\conjugate{pq}$
+            \end{itemize}
+            \subsection{Examples}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+        \section{Triangle Inequality}
+            \begin{itemize}
+                \item $\abs{p+q}\leq\abs{p}+\abs{q}$
+            \end{itemize}
+            \subsection{Examples}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+        \section{Euler's Formula}
+            \begin{itemize}
+                \item $e^{i\theta}=\cos{\theta}+i\sin{\theta}$
+                \item $z=re^{i\theta}$
+            \end{itemize}
+            \subsection{Examples}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+                \subsubsection{}
+                    \begin{enumerate}
+                        \item 
+                    \end{enumerate}
+        \section{Practice Set}
+            \subsection{Express each complex number in terms of $i$.}
+                \subsubsection{$\sqrt{-25}$}
+                    \begin{enumerate}
+                        \item $\sqrt{25}\sqrt{-1}$
+                        \item $5i$
+                    \end{enumerate}
+                \subsubsection{$\sqrt{-18}$}
+                    \begin{enumerate}
+                        \item $\sqrt{18}\sqrt{-1}$
+                        \item $3\sqrt{2}i$
+                    \end{enumerate}
+                \subsubsection{$\sqrt{-\frac{8}{9}}$}
+                    \begin{enumerate}
+                        \item $\sqrt{\frac{8}{9}}\sqrt{-1}$
+                        \item $\frac{2}{3}\sqrt{2}i$
+                    \end{enumerate}
+            \subsection{Simplify each expression.}
+            \subsection{Solve each equation.}
+            \subsection{Solve each equation using the quadratic formula.}
+            \subsection{Solve each equation by completing the square.}
+            \subsection{Factorise each expression in the equation as a difference of 2 squares, then solve the equation.}
+            \subsection{State $\re{z}$ and $\im{z}$ for each complex number.}
+            \subsection{State the complex conjugate of each complex number.}
+            \subsection{If $z=p-3iq$ where $p,q\in\realnumbers$, prove that:}
+            \subsection{If $x$ and $y$ are real, solve each equation for $x$ and $y$.}
+            \subsection{If $V=\frac{2x+2yi-5+3ix-2y+7i}{x^2+y^2}$ is always real, where $x$ and }
+    \chapter{Proof}
+        \section{Symbols}
+            \begin{tabular}{c|c}
+                $\implies$&Implication\\
+                $\iff$&Equivalence\\
+                $\neg$&Negation\\
+                $\wedge$&Conjunction\\
+                $\vee$&Inclusive Disjunction\\
+                $\veebar$&Exclusive Disjunction\\
+                $\top$&Truth\\
+                $\bot$&False\\
+                $\forall$&Universal Quantification\\
+                $\exists$&Existential Quantification\\
+                $\uexists$&Unique Quantification\\
+                $()$&Precedence\\
+            \end{tabular}
+    \chapter{3D Vectors}
+        \section{Points}
+            \begin{itemize}
+                \item $a$
+            \end{itemize}
+        \section{Addition}
+            \begin{itemize}
+                \item $a$
+            \end{itemize}
+        \section{Scalar Multiplication}
+            \begin{itemize}
+                \item $a$
+            \end{itemize}
+        \section{}
+            \begin{itemize}
+                \item $a$
+            \end{itemize}
+        \section{Magnitude}
+            \begin{itemize}
+                \item $\abs{\vtildeset{x}{y}{z}}=\sqrt{x^{2}+y^{2}+z^{2}}$
+            \end{itemize}
+        \section{Unit Vector}
+            \begin{itemize}
+                \item $a$
+            \end{itemize}
+        \section{Angle Between Vectors}
+            \begin{itemize}
+                \item $a$
+            \end{itemize}
+        \section{Scalar / Dot Product}
+            \begin{itemize}
+                \item $a$
+            \end{itemize}
+        \section{Parallel Vectors}
+            \begin{itemize}
+                \item $a$
+            \end{itemize}
+        \section{Perpendicular Vectors}
+            \begin{itemize}
+                \item $a$
+            \end{itemize}
+        \section{Midpoint of Vectors}
+            \begin{itemize}
+                \item $a$
+            \end{itemize}
+        \section{Points}
+            \begin{itemize}
+                \item $a$
+            \end{itemize}
+        \section{Parametric Vector Equations of Curves}
+            \begin{itemize}
+                \item $a$
+            \end{itemize}
+        \section{}
+            \begin{itemize}
+                \item $a$
+            \end{itemize}
+\end{document}
